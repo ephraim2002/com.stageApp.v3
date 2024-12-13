@@ -1,0 +1,237 @@
+<div class="bg-gradient-primary py-7">
+    <div class="container">
+        <div class="text-center text-white mb-5">
+            <img src="assets/img/logo-dgsi.png" width="80" height="80" alt="Logo DGSI" class="mb-3">
+            <h2 class="h1">Formulaire de Candidature</h2>
+            <p class="lead">Direction Générale des Systèmes d'Information</p>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-n6">
+    <div class="card shadow-lg">
+        <div class="card-body p-5">
+            <!-- Progress Bar -->
+            <div class="progress-wrapper mb-5">
+                <div class="progress-info">
+                    <div class="progress-label">
+                        <span class="text-primary">Progression</span>
+                    </div>
+                    <div class="progress-percentage text-primary">
+                        <span>Étape {{currentStep}}/4</span>
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-primary" 
+                         [style.width]="(currentStep/4*100) + '%'">
+                    </div>
+                </div>
+            </div>
+
+            <form [formGroup]="postulationForm" (ngSubmit)="onSubmit()">
+                <!-- Étape 1: Informations Personnelles -->
+                <div *ngIf="currentStep === 1" class="fade-in">
+                    <h3 class="text-primary mb-4">
+                        <i class="fas fa-user-circle mr-2"></i>
+                        Informations Personnelles
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label">NIP <span class="text-danger">*</span></label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       formControlName="nip"
+                                       placeholder="Numéro d'Identification Personnel">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Nom <span class="text-danger">*</span></label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       formControlName="nom"
+                                       placeholder="Votre nom">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Prénom(s) <span class="text-danger">*</span></label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       formControlName="prenom"
+                                       placeholder="Votre/vos prénom(s)">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Sexe <span class="text-danger">*</span></label>
+                                <select class="form-control" formControlName="sexe">
+                                    <option value="">Sélectionnez votre sexe</option>
+                                    <option value="M">Masculin</option>
+                                    <option value="F">Féminin</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Nationalité <span class="text-danger">*</span></label>
+                                <select class="form-control" formControlName="nationalite">
+                                    <option value="">Sélectionnez votre nationalité</option>
+                                    <option value="BF">Burkinabè</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Email <span class="text-danger">*</span></label>
+                                <input type="email" 
+                                       class="form-control" 
+                                       formControlName="email"
+                                       placeholder="exemple@email.com">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Étape 2: Formation -->
+                <div *ngIf="currentStep === 2" class="fade-in">
+                    <h3 class="text-primary mb-4">
+                        <i class="fas fa-graduation-cap mr-2"></i>
+                        Formation
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Niveau d'étude <span class="text-danger">*</span></label>
+                                <select class="form-control" formControlName="niveauEtude">
+                                    <option value="">Sélectionnez votre niveau</option>
+                                    <option value="BAC">BAC</option>
+                                    <option value="BAC+2">BAC+2</option>
+                                    <option value="LICENCE">LICENCE</option>
+                                    <option value="MASTER">MASTER</option>
+                                    <option value="DOCTORAT">DOCTORAT</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Domaine d'étude <span class="text-danger">*</span></label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       formControlName="domaineEtude"
+                                       placeholder="Ex: Informatique, Réseaux, etc.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Étape 3: Stage -->
+                <div *ngIf="currentStep === 3" class="fade-in">
+                    <h3 class="text-primary mb-4">
+                        <i class="fas fa-briefcase mr-2"></i>
+                        Stage Souhaité
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Type de stage <span class="text-danger">*</span></label>
+                                <select class="form-control" formControlName="typeStage">
+                                    <option value="">Sélectionnez le type</option>
+                                    <option value="soutenance">Stage de soutenance</option>
+                                    <option value="perfectionnement">Stage de perfectionnement</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Domaine de stage <span class="text-danger">*</span></label>
+                                <select class="form-control" formControlName="domainStage">
+                                    <option value="">Sélectionnez un domaine</option>
+                                    <option value="dev">Développement</option>
+                                    <option value="reseau">Réseaux</option>
+                                    <option value="si">Systèmes d'Information</option>
+                                    <option value="securite">Sécurité</option>
+                                    <option value="data">Data/BI</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Durée du stage <span class="text-danger">*</span></label>
+                                <select class="form-control" formControlName="dureeStage">
+                                    <option value="">Sélectionnez la durée</option>
+                                    <option value="2">2 mois</option>
+                                    <option value="3">3 mois</option>
+                                    <option value="6">6 mois</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Étape 4: Documents -->
+                <div *ngIf="currentStep === 4" class="fade-in">
+                    <h3 class="text-primary mb-4">
+                        <i class="fas fa-file-upload mr-2"></i>
+                        Documents
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label">CV (PDF) <span class="text-danger">*</span></label>
+                                <div class="custom-file">
+                                    <input type="file" 
+                                           class="custom-file-input" 
+                                           id="cv"
+                                           (change)="onFileChange($event, 'cv')"
+                                           accept=".pdf">
+                                    <label class="custom-file-label" for="cv">Choisir un fichier</label>
+                                </div>
+                                <small class="text-muted">Taille maximale: 5MB</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-control-label">CNIB (PDF) <span class="text-danger">*</span></label>
+                                <div class="custom-file">
+                                    <input type="file" 
+                                           class="custom-file-input" 
+                                           id="cnib"
+                                           (change)="onFileChange($event, 'cnib')"
+                                           accept=".pdf">
+                                    <label class="custom-file-label" for="cnib">Choisir un fichier</label>
+                                </div>
+                                <small class="text-muted">Taille maximale: 5MB</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="button" 
+                            class="btn btn-outline-primary" 
+                            (click)="previousStep()"
+                            *ngIf="currentStep > 1">
+                        <i class="fas fa-arrow-left mr-2"></i>Précédent
+                    </button>
+                    <button type="button" 
+                            class="btn btn-primary" 
+                            (click)="nextStep()"
+                            *ngIf="currentStep < 4">
+                        Suivant<i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                    <button type="submit" 
+                            class="btn btn-success" 
+                            *ngIf="currentStep === 4"
+                            [disabled]="isSubmitting">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        {{ isSubmitting ? 'Envoi en cours...' : 'Envoyer ma candidature' }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

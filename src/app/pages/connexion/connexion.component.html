@@ -1,0 +1,100 @@
+
+<div class="container-fluid">
+    <div class="row min-vh-100">
+        <!-- Left side - Login Form -->
+        <div class="col-lg-6 d-flex align-items-center justify-content-center bg-white">
+            <a routerLink="/acceuil" class="position-absolute top-0 start-0 m-4 btn btn-outline-primary">
+                <i class="fas fa-arrow-left mr-2"></i>Retour à l'accueil
+            </a>
+
+            <div class="login-form-wrapper w-75">
+                <!-- Logo and Title -->
+                <div class="text-center mb-5">
+                    <img src="assets/img/logo-dgsi.png" width="70" height="70" alt="Logo DGSI">
+                    <h2 class="mt-4 font-weight-bold text-primary">DGSI STAGES</h2>
+                    <p class="text-muted">Connectez-vous à votre espace</p>
+                </div>
+
+                <!-- Login Form -->
+                <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                    <!-- Username Field -->
+                    <div class="form-group">
+                        <label for="username" class="form-label">Nom d'utilisateur</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </div>
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="username" 
+                                   name="username"
+                                   [(ngModel)]="loginData.username"
+                                   required>
+                        </div>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="form-group">
+                        <label for="password" class="form-label">Mot de passe</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </div>
+                            <input type="password" 
+                                   class="form-control" 
+                                   id="password" 
+                                   name="password"
+                                   [(ngModel)]="loginData.password"
+                                   required>
+                        </div>
+                    </div>
+
+                     <!-- Error message -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+    </div>
+
+                    <!-- Remember Me & Forgot Password -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="rememberMe">
+                            <label class="custom-control-label" for="rememberMe">Se souvenir de moi</label>
+                        </div>
+                        <a href="#" class="text-primary">Mot de passe oublié ?</a>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" 
+                        class="btn btn-primary btn-block" 
+                        [disabled]="!loginForm.form.valid || isLoading">
+                        <i class="fas fa-spinner fa-spin" *ngIf="isLoading"></i>
+                        <i class="fas fa-sign-in-alt mr-2" *ngIf="!isLoading"></i>
+                         {{ isLoading ? 'Connexion...' : 'Se connecter' }}
+                    </button>
+
+                    <!-- Register Link -->
+                    <div class="text-center mt-4">
+                        <p class="mb-0">Vous n'avez pas de compte ? 
+                            <a href="/register" class="text-primary">Créer un compte</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right side - Background Image -->
+        <div class="col-lg-6 d-none d-lg-block" 
+             style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/img/login-bg.jpg');
+                    background-size: cover;
+                    background-position: center;">
+            <div class="d-flex flex-column min-vh-100 justify-content-center text-center text-white px-4">
+                <h1 class="display-4 font-weight-bold">Bienvenue sur DGSI STAGES</h1>
+                <p class="lead">Accédez à votre espace personnel pour gérer vos candidatures et suivre vos stages</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,194 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#home">
+            <img src="assets/img/logo-dgsi.png" 
+                 width="45" height="45" 
+                 class="d-inline-block align-top" 
+                 alt="Logo DGSI">
+            <span class="ml-2 font-weight-bold text-primary">DGSI STAGES</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#stages">Stages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-success ml-lg-2" routerLink="/postuler">
+                        <i class="fas fa-paper-plane mr-2"></i>Postuler
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-primary ml-lg-2" routerLink="/connexion">
+                        <i class="fas fa-sign-in-alt mr-2"></i>Connexion
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero-section bg-gradient-primary py-7">
+    <div class="container">
+        <div class="row align-items-center min-vh-80">
+            <div class="col-lg-6 fade-in-left">
+                <h1 class="display-4 text-white font-weight-bold">Développez vos compétences à la DGSI</h1>
+                <p class="lead text-white-75 mt-4">
+                    Rejoignez la Direction Générale des Systèmes d'Information du Burkina Faso et participez à la transformation numérique de l'administration publique.
+                </p>
+                <div class="mt-5">
+                    <a href="#stages" class="btn btn-lg btn-white hover-translate-y">
+                        <i class="fas fa-search mr-2"></i> Découvrir nos opportunités
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 fade-in-right text-center">
+                <img src="assets/img/seo-training-marketing-presentation-svgrepo-com.svg" 
+                     class="hero-image img-fluid floating" 
+                     alt="Illustration technologie">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stages Section -->
+<section id="stages" class="features-section py-6 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="h1">Nos Domaines de Stage</h2>
+            <p class="lead text-muted">Contribuez à la modernisation des services publics</p>
+        </div>
+        <div class="row">
+            <!-- Systèmes d'Information Card -->
+            <div class="col-md-4">
+                <div class="card shadow-sm hover-card">
+                    <div class="card-body text-center p-5">
+                        <div class="icon-box mb-4">
+                            <i class="fas fa-desktop text-primary fa-3x"></i>
+                        </div>
+                        <h4>Systèmes d'Information</h4>
+                        <p class="text-muted">Gestion et maintenance des systèmes d'information de l'administration</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Développement Card -->
+            <div class="col-md-4">
+                <div class="card shadow-sm hover-card">
+                    <div class="card-body text-center p-5">
+                        <div class="icon-box mb-4">
+                            <i class="fas fa-code text-success fa-3x"></i>
+                        </div>
+                        <h4>Développement</h4>
+                        <p class="text-muted">Conception d'applications pour l'administration publique</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Réseaux Card -->
+            <div class="col-md-4">
+                <div class="card shadow-sm hover-card">
+                    <div class="card-body text-center p-5">
+                        <div class="icon-box mb-4">
+                            <i class="fas fa-server text-warning fa-3x"></i>
+                        </div>
+                        <h4>Réseaux</h4>
+                        <p class="text-muted">Gestion de l'infrastructure réseau gouvernementale</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-6">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="h1 mb-4">Contactez-nous</h2>
+                <p class="lead text-muted mb-5">Une question sur nos stages ? N'hésitez pas à nous contacter !</p>
+                <div class="row">
+                    <!-- Email Contact -->
+                    <div class="col-md-4">
+                        <div class="mb-4">
+                            <i class="fas fa-envelope text-primary fa-2x mb-3"></i>
+                            <h5>Email</h5>
+                            <p class="text-muted">contact@dgsi.gov.bf</p>
+                        </div>
+                    </div>
+                    <!-- Phone Contact -->
+                    <div class="col-md-4">
+                        <div class="mb-4">
+                            <i class="fas fa-phone text-primary fa-2x mb-3"></i>
+                            <h5>Téléphone</h5>
+                            <p class="text-muted">+226 XX XX XX XX</p>
+                        </div>
+                    </div>
+                    <!-- Address Contact -->
+                    <div class="col-md-4">
+                        <div class="mb-4">
+                            <i class="fas fa-map-marker-alt text-primary fa-2x mb-3"></i>
+                            <h5>Adresse</h5>
+                            <p class="text-muted">Ouagadougou, Burkina Faso</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="about" class="footer bg-dark text-white py-5">
+    <div class="container">
+
+        <div class="d-flex align-items-center mb-4">
+            <img src="assets/img/logo-dgsi.png" 
+                 width="40" height="40" 
+                 class="d-inline-block" 
+                 alt="Logo DGSI">
+            <span class="ml-2 h4 text-white mb-0">DGSI STAGES</span>
+        </div>
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <h5 class="text-uppercase mb-4">À propos de la DGSI</h5>
+                <p class="text-muted">La Direction Générale des Systèmes d'Information (DGSI) du Burkina Faso est chargée de la modernisation des systèmes d'information de l'administration publique. Nous offrons des opportunités de stage pour former la prochaine génération de professionnels des TIC.</p>
+                <div class="mt-4">
+                    <a href="#stages" class="btn btn-outline-light hover-translate-y">
+                        <i class="fas fa-briefcase mr-2"></i> Voir nos stages
+                    </a>
+                </div>
+            </div>
+            <!-- Quick Links -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <h5 class="text-uppercase mb-4">Liens Rapides</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><a href="#home" class="text-muted"><i class="fas fa-chevron-right mr-2"></i>Accueil</a></li>
+                    <li class="mb-3"><a href="#stages" class="text-muted"><i class="fas fa-chevron-right mr-2"></i>Nos Stages</a></li>
+                    <li class="mb-3"><a href="/login" class="text-muted"><i class="fas fa-chevron-right mr-2"></i>Connexion</a></li>
+                </ul>
+            </div>
+            <!-- Contact Info -->
+            <div class="col-lg-4">
+                <h5 class="text-uppercase mb-4">Contact</h5>
+                <p class="text-muted mb-4">Direction Générale des Systèmes d'Information<br>
+                    Ouagadougou, Burkina Faso</p>
+                <a href="/postuler" class="btn btn-primary hover-translate-y">
+                    <i class="fas fa-paper-plane mr-2"></i> Postuler maintenant
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>

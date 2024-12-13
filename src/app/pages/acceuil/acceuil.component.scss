@@ -1,0 +1,140 @@
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Animations */
+  .fade-in-left {
+    animation: fadeInLeft 1s ease-out;
+  }
+  
+  .fade-in-right {
+    animation: fadeInRight 1s ease-out;
+  }
+  
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  /* Navigation */
+  .navbar {
+    padding: 1rem 0;
+  }
+  
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  
+  /* Sections */
+  .bg-gradient-primary {
+    background: linear-gradient(87deg, #1a237e 0, #283593 100%);
+  }
+  
+  .min-vh-80 {
+    min-height: 80vh;
+  }
+  
+  /* Cards */
+  .hover-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+  }
+  
+  .hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Boutons */
+  .btn {
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .hover-translate-y:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1);
+  }
+  
+  /* Utilities */
+  .text-white-75 {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .hover-card {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .hover-translate-y {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover-translate-y:hover {
+    transform: translateY(-2px);
+  }
+  
+  .nav-link {
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: var(--primary) !important;
+  }
+
+  .hero-image {
+  max-width: 90%;
+  height: auto;
+}
+
+.icon-box img {
+  transition: transform 0.3s ease;
+}
+
+.hover-card:hover .icon-box img {
+  transform: scale(1.1);
+}
+
+/* Animation pour l'image héro */
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
